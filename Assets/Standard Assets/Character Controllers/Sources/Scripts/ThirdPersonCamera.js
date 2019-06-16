@@ -117,7 +117,7 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 		// Lock the camera when moving backwards!
 		// * It is really confusing to do 180 degree spins when turning around.
 		if (AngleDistance (currentAngle, targetAngle) > 160 && controller.IsMovingBackwards ())
-			targetAngle += -180;
+			targetAngle += 180;
 
 		currentAngle = Mathf.SmoothDampAngle(currentAngle, targetAngle, angleVelocity, angularSmoothLag, angularMaxSpeed);
 	}

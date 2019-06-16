@@ -23,8 +23,8 @@ function OnTriggerEnter(other:Collider){
 		Debug.Log("In trigger");
 		GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
 		
-		//var gameController : GameObject = GameObject.FindWithTag("ballCamera");
-		//gameController.SendMessage("AddBall",addballCount);
+		var gameController : GameObject = GameObject.FindWithTag("ballCamera");
+		gameController.SendMessage("AddBall",addballCount);
 		//GameObject.Find("ballcharger").SendMessage("AddBall",addballCount);
 		}
 }
