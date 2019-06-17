@@ -39,8 +39,15 @@ function Update () {
 
 function AddBall(addballCount : int){
  	Debug.Log(addballCount);
-	ballCount += addballCount;
-
+ 	if(ballCount > 10){ 
+ 	 ballCount = 20; 
+ 	 GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
+ 	}
+ 	
+ 	else {
+	 ballCount += addballCount;
+	 GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
+    }
 }
 
 
@@ -62,7 +69,7 @@ function OnGUI(){
 	else if(addBall == true){
 		sw = Screen.width;
 		sh = Screen.height;
-		GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
+		//GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
 	}
 	
 }

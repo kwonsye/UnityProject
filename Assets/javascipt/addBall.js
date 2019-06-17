@@ -1,10 +1,9 @@
 ﻿#pragma strict
-private var addballCount : int; // the number of mission
 private var addBall : boolean;
 //var  : GameObject;
 //var addballCount : int;
 var labelStyle : GUIStyle;
-
+var mainCam : GameObject;
 private var sw : int;
 private var sh : int;
 function Start () {
@@ -20,12 +19,9 @@ function OnTriggerEnter(other:Collider){
 	
 	if(other.gameObject.tag == "ballCharger"){ // if tag name is BallCharger..
 		addBall = true;
-		Debug.Log("In trigger");
+		//Debug.Log("In trigger");
 		GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
-		
-		var gameController : GameObject = GameObject.FindWithTag("ballCamera");
-		gameController.SendMessage("AddBall",addballCount);
-		//GameObject.Find("ballcharger").SendMessage("AddBall",addballCount);
+		mainCam.SendMessage("AddBall",10); // 
 		}
 }
 
