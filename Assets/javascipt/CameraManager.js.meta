@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3985a1d851c001c44970c8a4ee2d595d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mainCam: {instanceID: 0}
+  - miniCam: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

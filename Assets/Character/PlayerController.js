@@ -1,8 +1,9 @@
 ﻿#pragma strict
-public var walkSpeed : float = 3.0; // walk speed
-public var gravity : float = 20.0; // gravity
+var walkSpeed : float = 3.0;
+var gravity : float = 20.0;
+var jumpSpeed : float = 8.0;
 
-private var velocity : Vector3; // current speed
+private var velocity : Vector3;
 
 function Start () {
 	animation["Walk"].speed = 2.0;
@@ -11,18 +12,24 @@ function Start () {
 
 function Update () {
 	var controller : CharacterController = GetComponent(CharacterController);
-	velocity = Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical"));
-	velocity *= walkSpeed;
 	if(controller.isGrounded){
-		if(velocity.magnitude > 0.5){// if velocity exists
-			animation.CrossFade("Walk", 0.1); // animation operates
-			transform.LookAt(transform.position + velocity);// move
+		velocity = Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+		velocity *= walkSpeed;
+		
+		if(Input.GetButtonDown("Jump")){
+			velocity.y = jumpSpeed;
+			animation.Play("Jump");
+		
+		}
+		else if(velocity.magnitude > 0.5 ){
+			animation.CrossFade("Walk", 0.1);
+			transform.LookAt(transform.position + velocity);
 		}
 		else{
 			animation.CrossFade("Idle",0.1);
 		}
+	
 	}
 	velocity.y -= gravity * Time.deltaTime;
 	controller.Move(velocity * Time.deltaTime);
 }
-
