@@ -1,6 +1,7 @@
 ﻿#pragma strict
-var walkSpeed : float = 3.0; // walk speed
-var gravity : float = 20.0; // gravity
+public var walkSpeed : float = 3.0; // walk speed
+public var gravity : float = 20.0; // gravity
+
 private var velocity : Vector3; // current speed
 
 function Start () {
@@ -24,3 +25,4 @@ function Update () {
 	velocity.y -= gravity * Time.deltaTime;
 	controller.Move(velocity * Time.deltaTime);
 }
+
