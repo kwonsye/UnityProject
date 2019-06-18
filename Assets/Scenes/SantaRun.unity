@@ -44105,9 +44105,9 @@ ParticleSystem:
     radius: 1
     angle: 25
     length: 5
-    boxX: 70
-    boxY: 70
-    boxZ: 20
+    boxX: 120
+    boxY: 100
+    boxZ: 30
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
@@ -44115,7 +44115,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1000
+      scalar: 1500
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -44882,7 +44882,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012839526}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: -.756843567, y: 9.99999809, z: 12.1531696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
