@@ -47,7 +47,7 @@ function GetRandomPoints(){
 
 function HitEndPoint(hittedEndPoint : GameObject){
 	
-	
+
 	//지정된 EndPoint에 골인 하면 게임 종료
 	if(hittedEndPoint == randomEndPoint){
 		Debug.Log("HitEndPoint");
