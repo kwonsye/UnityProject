@@ -1,5 +1,5 @@
 ﻿#pragma strict
-
+var map_sound : AudioClip;
 private var call_minimap : boolean;
 var cameraManager : CameraManager;
 private var item_count : int; // 가지고 있는 미니맵 아이템 수
@@ -23,7 +23,9 @@ function Update () {
 // trigger에 들어가면
 function OnTriggerEnter(other:Collider){
 	
-	if(other.gameObject.tag == "drone"){ // if tag name is drone...
+	if(other.gameObject.tag == "minimap"){ // if tag name is minimap...
+		//AudioSource map_sound = GetComponent.<AudioSource>(); // add audio effect
+		audio.PlayOneShot(map_sound);
 		item_count ++; // 미니맵 아이템 추가
 		call_minimap = true;
 	}
@@ -31,10 +33,11 @@ function OnTriggerEnter(other:Collider){
 
 // trigger를 나가면
 function OnTriggerExit(other:Collider){
-	if(other.gameObject.tag == "drone"){ // destroy drone...
+	if(other.gameObject.tag == "minimap"){ // destroy minimap...
 		yield WaitForSeconds(0.2);
 		//call_minimap = false;
 		Destroy(other.gameObject);
+		Destroy(other.transform.parent.gameObject);
 	}
 }
 
@@ -44,7 +47,7 @@ function getMapItem(){
 		cameraManager.miniCamOn(); // call minimap mode
 		
 		//4초 후에 사라짐
-		yield WaitForSeconds(4.0);
+		yield WaitForSeconds(7.0);
 		cameraManager.mainCamOn();
 		item_count --; // 아이템 사용했음으로 -1
 	}

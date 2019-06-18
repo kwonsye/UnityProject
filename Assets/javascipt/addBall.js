@@ -1,5 +1,6 @@
 ﻿#pragma strict
 private var addBall : boolean;
+var snowball_sound : AudioClip;
 //var  : GameObject;
 //var addballCount : int;
 var labelStyle : GUIStyle;
@@ -19,6 +20,7 @@ function OnTriggerEnter(other:Collider){
 	
 	if(other.gameObject.tag == "ballCharger"){ // if tag name is BallCharger..
 		addBall = true;
+		audio.PlayOneShot(snowball_sound);
 		//Debug.Log("In trigger");
 		GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
 		mainCam.SendMessage("AddBall",10); // 
@@ -31,6 +33,7 @@ function OnTriggerExit(other:Collider){
 		yield WaitForSeconds(0.2);
 		addBall = false;
 		Destroy(other.gameObject);
+		Destroy(other.transform.parent.gameObject);
 	}
 }
 
