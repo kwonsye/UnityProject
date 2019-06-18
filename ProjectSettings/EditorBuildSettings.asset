@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SantaRunTitle.unity
+    path: Assets/SantaRunTitle.unity
   - enabled: 1
-    path: Assets/SantaRun.unity
+    path: Assets/Scenes/SantaRun.unity
