@@ -20,7 +20,6 @@ function Start () {
 }
 
 function Update () {
-
 	
 }
 
@@ -51,10 +50,12 @@ function HitEndPoint(hittedEndPoint : GameObject){
 	//지정된 EndPoint에 골인 하면 게임 종료
 	if(hittedEndPoint == randomEndPoint){
 		Debug.Log("HitEndPoint");
+		GameObject.Find("GameController").SendMessage("GameEnd");
 		
 		//result 화면 보여주기
 		if(resultUI != null){
 			resultUI.SetActive(true);
+			
 		}
 	}
 	

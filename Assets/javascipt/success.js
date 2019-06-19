@@ -16,7 +16,7 @@ function Start () {
 }
 
 function Update () {
-
+	
 }
 
 
@@ -25,6 +25,8 @@ function OnTriggerEnter(other:Collider){
 	if(other.gameObject.tag == "mission"){
 		//Debug.Log("find tag of mission");
 		counter ++; 
+		//수연 : SendMessage로 MIssionController.js에 넘겨서 gui 그려줌
+		GameObject.Find("GameController").SendMessage("GetCompletedMissionCount", counter);
 		if(successed == false){
 			//Debug.Log("successed == true");
 			successed = true;

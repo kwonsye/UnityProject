@@ -22,3 +22,13 @@ function YouAreHit(){
 	if(count == 2){
 		Destroy(gameObject);}
 }
+
+function OnTriggerEnter(other : Collider){
+	
+	if(other.gameObject.tag=="Player"){
+	
+		Debug.Log("you are hit");
+		other.SendMessage("HitBySnowman", gameObject);
+		
+	}
+}

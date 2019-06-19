@@ -6,6 +6,7 @@ public var starGUI : GUITexture;
 
 private var completedMissionsCount : int; //나중에 받아 와야함
 
+
 function Start () {
 	
 	drawStars();

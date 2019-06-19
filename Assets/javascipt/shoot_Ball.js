@@ -35,6 +35,9 @@ function Update () {
 		//var direction : Vector3 = transform.forward;
 		ball.rigidbody.velocity = direction * initialVelocity;
 	}
+	
+	//ballCount를 SnowBallController에게 넘겨줌
+	GameObject.FindWithTag("Player").SendMessage("GetSnowBallCount",ballCount);
 }
 
 function AddBall(addballCount : int){
