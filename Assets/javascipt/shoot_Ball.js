@@ -18,12 +18,12 @@ function Update () {
 	    if(ballCount >= 1) { // 발사된 공이 10개 이하라면 계속 만들어
 		var ball : GameObject = Instantiate(ballPrefab, transform.position, transform.rotation);
 		ballCount --;
-		GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
+		//GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
 		shot = false; // 모든 공을 다 발사하지 않았음으로 false
 		}
 		else{
 			shot = true; // 모든 공을 다 발사했다면 true
-			GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"No Ball!!", labelStyle);
+			//GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"No Ball!!", labelStyle);
 		}
 		
 		var screenPoint = Input.mousePosition; // 마우스 따라서 공을 던질 수 있게 하기 위해
@@ -44,17 +44,17 @@ function AddBall(addballCount : int){
  	Debug.Log(addballCount);
  	if(ballCount > 10){ 
  	 ballCount = 20; 
- 	 GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
+ 	 //GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
  	}
  	
  	else {
 	 ballCount += addballCount;
-	 GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
+	 //GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"Ball : " + ballCount, labelStyle);
     }
 }
 
 
-
+/*
 function OnGUI(){
 	if(shot == true){ // mission success
 		sw = Screen.width;
@@ -75,4 +75,4 @@ function OnGUI(){
 		//GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
 	}
 	
-}
+}*/

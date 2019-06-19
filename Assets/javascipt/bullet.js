@@ -9,11 +9,11 @@ function Update () {
 
 }
 
-function OnCollisionEnter(collisionInfo : Collision){
-	Debug.Log(collisionInfo);
+function OnTriggerEnter(other : Collider){
+	Debug.Log(other);
 	
-	if(collisionInfo.gameObject.tag == "snowman"){
-			collisionInfo.gameObject.SendMessage("YouAreHit");
+	if(other.gameObject.tag == "snowman"){
+			other.gameObject.SendMessage("YouAreHit");
 	}
 	
 	Destroy(gameObject); // 눈 제거

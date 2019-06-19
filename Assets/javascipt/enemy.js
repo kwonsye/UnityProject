@@ -12,14 +12,15 @@ function Update () {
 
 function YouAreHit(){
 	count++;
-	yield WaitForSeconds(0.5);
+	yield WaitForSeconds(0.3);
 	audio.PlayOneShot(punch_sound);
 	Instantiate(explosionPrefab, transform.position, transform.rotation);
-	yield WaitForSeconds(0.5);
-	audio.PlayOneShot(punch_sound);
+	yield WaitForSeconds(0.3);
+	
 	
 	
 	if(count == 2){
+	yield WaitForSeconds(0.2);
 		Destroy(gameObject);}
 }
 
