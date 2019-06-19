@@ -4,17 +4,24 @@ public var isTest : boolean;
 public var testCompletedMissionsCount :int;
 public var starGUI : GUITexture;
 
-private var completedMissionsCount : int; //나중에 받아 와야함
+private var completedMissionsCount : int;
 
+function Awake(){
+ 	// 고정 192 x.1080 
+    Screen.SetResolution(1920, 1080, true);
+    
+    var width = Screen.width;
+    var height = Screen.height;
+    
+    starGUI.pixelInset = new Rect(-200,-60,400,110);
+}
 
 function Start () {
-	
-	drawStars();
 	
 }
 
 function Update () {
-	
+	drawStars();
 }
 
 function drawStars(){
@@ -25,35 +32,22 @@ function drawStars(){
 	}
 	
 	switch(completedMissionsCount){
+	
+			case 0 : 
+				starGUI.texture = Resources.Load("UI/ResultUI/ZeroStar_BG");
+				break;
+				
 			case 1 : 
 				starGUI.texture = Resources.Load("UI/ResultUI/OneStar_BG");
-				
-				starGUI.pixelInset.x = -60;
-				starGUI.pixelInset.y = -50;
-				starGUI.pixelInset.width = 130;
-				starGUI.pixelInset.height = 100;
-		
 				break;
 			
 			case 2 : 
 				starGUI.texture = Resources.Load("UI/ResultUI/TwoStar_BG");
-				
-				starGUI.pixelInset.x = -130;
-				starGUI.pixelInset.y = -50;
-				starGUI.pixelInset.width = 260;
-				starGUI.pixelInset.height = 100;
-				
 				break;
 				
 			case 3 : 
 			
 				starGUI.texture = Resources.Load("UI/ResultUI/ThreeStar_BG");
-				
-				starGUI.pixelInset.x = -200;
-				starGUI.pixelInset.y = -50;
-				starGUI.pixelInset.width = 400;
-				starGUI.pixelInset.height = 100;
-				
 				break;
 				
 			default :
@@ -61,4 +55,13 @@ function drawStars(){
 				Debug.Log("CompletedMissonsCount Error");
 			
 		}
+}
+
+//성공한 미션 개수 SendMessage로 받는 함수
+function GetCompletedMissionCount(completedMission:int){
+	
+	if(!isTest){
+		completedMissionsCount = completedMission;
+	}
+	
 }

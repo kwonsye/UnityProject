@@ -13,7 +13,6 @@ function Start () {
 	//랜덤 시작-끝 위치 정하기
 	GetRandomPoints();
 
-
 	//random start point 의 위치에서 player 시작
 	gameObject.transform.position = randomStartPoint.transform.position;
 	

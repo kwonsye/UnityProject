@@ -20779,7 +20779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTest: 1
-  testCompletedMissionsCount: 1
+  testCompletedMissionsCount: 0
   starGUI: {fileID: 753404095}
 --- !u!114 &919697605
 MonoBehaviour:
@@ -35016,7 +35016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1536304942
 Transform:
   m_ObjectHideFlags: 0
