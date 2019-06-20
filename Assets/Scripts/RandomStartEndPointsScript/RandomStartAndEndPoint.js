@@ -43,6 +43,12 @@ function GetRandomPoints(){
 
 }
 
+
+function getRandomEndPoint(){
+	return randomEndPoint.transform.position;
+
+}
+
 function HitEndPoint(hittedEndPoint : GameObject){
 	
 

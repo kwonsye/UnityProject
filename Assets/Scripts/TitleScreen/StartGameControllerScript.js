@@ -10,6 +10,6 @@ function Update () {
 
 function StartGame(){
 	
-	Application.LoadLevel("SantaRun");
+	Application.LoadLevel("SantaRunMap");
 
 }

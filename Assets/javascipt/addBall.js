@@ -22,7 +22,7 @@ function OnTriggerEnter(other:Collider){
 		addBall = true;
 		audio.PlayOneShot(snowball_sound);
 		//Debug.Log("In trigger");
-		GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
+		//GUI.Label(Rect(sw/6,sh/3, sw*2/3,sh/3),"BallCharger!", labelStyle);
 		mainCam.SendMessage("AddBall",10); // 
 		}
 }
